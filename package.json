@@ -1,0 +1,22 @@
+{
+  "name": "mostly-ai-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "format": "prettier --write \"cypress/**/*.{js, ts}\"",
+    "lint": "eslint \"cypress/**/*.{js, ts}\" --quiet",
+    "test:open": "npx cypress open",
+    "test:run": "npx cypress run"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.0.0",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-cypress": "^2.14.0",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  }
+}
