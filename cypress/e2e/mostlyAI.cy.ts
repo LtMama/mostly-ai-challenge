@@ -1,8 +1,11 @@
 /// <reference types="cypress" />
 import header from '../pages/globalHeader';
 
+const testRunId = Date.now();
+
 describe('Mostly AI Challenge', () => {
 	beforeEach(() => {
+		cy.handleSessionCookie(testRunId);
 		cy.visit('/');
 	});
 
