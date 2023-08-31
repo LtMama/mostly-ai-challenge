@@ -1,3 +1,4 @@
+/// <reference types="cypress" />
 Cypress.Commands.add(
 	'handleSessionCookie',
 	(testSessionId: string | number) => {
