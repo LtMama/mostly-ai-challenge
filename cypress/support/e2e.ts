@@ -1,5 +1,9 @@
+import { Interception } from '../../node_modules/cypress/types/net-stubbing';
 import './commands';
+// this module is required for "true" hover events
 import 'cypress-real-events';
+
+/// <reference types="cypress" />
 
 declare global {
 	// eslint-disable-next-line @typescript-eslint/no-namespace
@@ -12,6 +16,13 @@ declare global {
 			 * @example cy.handleSessionCookie('test@test.com')
 			 */
 			handleSessionCookie(sessionId: string | number): Chainable<null>;
+
+			/**
+			 * Custom command to initialise the frontend after window:load has fired.
+			 * Prevent tests running before page is ready
+			 * @example cy.waitForFrontendReady()
+			 */
+			waitForFrontendReady(): Chainable<Interception>;
 		}
 	}
 }

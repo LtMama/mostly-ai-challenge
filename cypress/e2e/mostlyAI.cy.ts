@@ -7,6 +7,7 @@ describe('Mostly AI Challenge', () => {
 	beforeEach(() => {
 		cy.handleSessionCookie(testRunId);
 		cy.visit('/');
+		cy.waitForFrontendReady();
 	});
 
 	it('shows expected site navigation bookmarks', () => {
