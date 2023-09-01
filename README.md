@@ -41,3 +41,7 @@ npm run test:run -- --browser chrome --headed
 #
 
 Note: Limited to Cypress ^v12 pending `cypress-real-events` dependency being updated
+
+Known issues:
+- `waitForFrontendReady` isn't perfect. Command can intermittently miss the expected intercepted request causing test to fail. Usually passes on a re-run but needs refining
+ 
