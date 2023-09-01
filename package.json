@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "format": "prettier --write \"cypress/**/*.{js, ts}\"",
-    "lint": "eslint \"cypress/**/*.{js, ts}\" --quiet",
+    "lint": "eslint \"cypress/**/*.{js,ts}\" --quiet",
     "test:open": "npx cypress open",
     "test:run": "npx cypress run"
   },
@@ -12,7 +12,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "cypress": "^12.17.4",
+    "cypress-real-events": "^1.10.1",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-cypress": "^2.14.0",

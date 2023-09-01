@@ -2,6 +2,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:cypress/recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   "parserOptions": {
@@ -9,6 +10,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
+  "plugins": ["cypress", "@typescript-eslint"],
   "env": {
     "es6": true,
     "browser": true,
