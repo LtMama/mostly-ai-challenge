@@ -10,7 +10,7 @@ Clone this repo
 git clone git@github.com:LtMama/mostly-ai-challenge
 ```
 
-Ensure node packages are up to date
+Install dependencies
 
 ```
 npm ci
