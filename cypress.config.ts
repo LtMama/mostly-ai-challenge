@@ -1,8 +1,10 @@
 import { defineConfig } from 'cypress';
 
 export default defineConfig({
-	watchForFileChanges: false,
-	e2e: {
-		baseUrl: 'https://mostly.ai',
-	},
+  e2e: {
+    baseUrl: 'https://mostly.ai',
+  },
+  watchForFileChanges: false,
+  viewportWidth: 1920,
+  viewportHeight: 1080,
 });
