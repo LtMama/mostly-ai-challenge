@@ -2,11 +2,10 @@
 
 class GlobalHeader {
 	/**
-	 * Navigation bookmark text values
+	 * Navigation bookmark text values.
 	 * Note: These must be in order they appear in Nav
-	 * @type {string[]}
 	 */
-	navBookmarks: string[] = [
+	navBookmarks = [
 		'Platform',
 		'Synthetic Data',
 		'Resources',
@@ -32,6 +31,16 @@ class GlobalHeader {
 
 	getNavBookmarks() {
 		return this.getNavMenu().find('li>a');
+	}
+
+	//ideally want to use navBookmarks array values for types here, WIP
+	openNavOptionsForBookmark(navItem: string) {
+		return this.getNavBookmarks()
+			.contains('a', navItem)
+			.trigger('mouseover')
+			.should('have.attr', 'aria-expanded', 'true')
+			.next('div')
+			.should('have.attr', 'aria-hidden', 'false');
 	}
 
 	getSearchField() {

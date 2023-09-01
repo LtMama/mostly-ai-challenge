@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 import header from '../pages/globalHeader';
+import contactPage from '../pages/contactPage';
 
 const testRunId = Date.now();
 
@@ -34,5 +35,26 @@ describe('Mostly AI Challenge', () => {
 			.should('have.text', invalidSearchTerm);
 	});
 
-	it('allows user to complete company contact form', () => {});
+	it('allows user to complete company contact form', () => {
+		header
+			.openNavOptionsForBookmark('Company')
+			.contains('a', 'Contact')
+			.click();
+
+		cy.url().should('contain', contactPage.urlPath);
+		cy.waitForFrontendReady();
+
+		cy.fixture('contactFormData').then((formData) => {
+			// Having to explicitly handle mixpanel:
+			// Uncaught ReferenceError when typing on form
+			// caused by not accepting mixpanel tracking cookie
+			cy.on('uncaught:exception', (err) => {
+				if (err.message.includes('mixpanel is not defined')) {
+					return false;
+				}
+			});
+
+			contactPage.completeContactForm(formData);
+		});
+	});
 });
