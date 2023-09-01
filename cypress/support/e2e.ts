@@ -1,7 +1,8 @@
-import { Interception } from '../../node_modules/cypress/types/net-stubbing';
-import './commands';
 // this module is required for "true" hover events
 import 'cypress-real-events';
+// import 'cypress-mochawesome-reporter/register';
+import './commands';
+import { Interception } from '../../node_modules/cypress/types/net-stubbing';
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace

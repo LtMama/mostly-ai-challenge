@@ -30,5 +30,5 @@ Cypress.Commands.add('waitForFrontendReady', () => {
     resourceType: 'xhr',
   }).as('wp');
   cy.root().realHover();
-  cy.wait('@wp');
+  cy.wait('@wp', { timeout: 4000 });
 });
