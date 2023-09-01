@@ -7,7 +7,7 @@ This is a Cypress TypeScript project for running some assorted end-to-end tests 
 Clone this repo
 
 ```
-git clone git@github.com:LtMama/mostly-challenge-ai
+git clone git@github.com:LtMama/mostly-ai-challenge
 ```
 
 Ensure node packages are up to date
